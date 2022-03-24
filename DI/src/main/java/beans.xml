@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- bean definitions here -->
-    <bean id="sim" class="com.tns.ioc.Jio"></bean> 
+    <bean id="s1" class="com.tns.di.Student">
+    	<property name="chit">
+    		<bean id="s1" class="com.tns.di.MathCheat"></bean>
+    	</property>
+    </bean> 
     
-    <bean id="sim" class="com.tns.ioc.Airtel" ></bean>
+	<bean id="s2" class="com.tns.di.Student2" >
+		<property name="chit">
+			<bean id="s2" class="com.tns.di.MathCheat"></bean>
+		</property>
+	</bean>
 
 </beans>
